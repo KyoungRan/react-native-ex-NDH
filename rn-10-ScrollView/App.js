@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
+      <ScrollView>
+        <Text style={{
+          fontSize: 30,
+          padding: 20,
+          backgroundColor: "red"
+        }}>
+        This is a text a ScrollView
+        </Text>
+        <Text style={{
+          fontSize: 30,
+          padding: 20,
+          backgroundColor: "green"
+        }}>
+        This is second Line
+        </Text>
+      </ScrollView>
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
