@@ -15,18 +15,19 @@ export default class MoviesComponent extends Component {
           rowHasChanged: (r1, r2) => r1 !== r2
         });
         /*
-    const movies = [
-      {
-        title: 'Star Wars',
-        releaseYear: '1977'
-      },
-      {
-        title: 'The Matrix',
-        releaseYear: '1999'
-      }
-    ];
-    */
-        // this.state.clonedMovies = standardDataSource.cloneWithRows(movies);
+        const movies = [
+          {
+            title: 'Star Wars',
+            releaseYear: '1977'
+          },
+          {
+            title: 'The Matrix',
+            releaseYear: '1999'
+          }
+        ];
+
+        clonedMovies = standardDataSource.cloneWithRows(movies);
+        */
         this.setState({
           isLoading: false,
           clonedMovies: standardDataSource.cloneWithRows(responseJson.movies)
@@ -47,7 +48,7 @@ export default class MoviesComponent extends Component {
     return (
       <View style={{ flex: 1, paddingTop: 30 }}>
         <ListView
-          dataSource={clonedMovies}
+          dataSource={this.state.clonedMovies}
           renderRow={rowData => (
             <Text>
               Title: {rowData.title}, release year: {rowData.releaseYear}
@@ -58,4 +59,3 @@ export default class MoviesComponent extends Component {
     );
   }
 }
-
