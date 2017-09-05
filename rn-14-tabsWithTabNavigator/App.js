@@ -1,23 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+import { TabNavigator } from 'react-navigation';
+import FirstScreen from './tabs/FirstScreen';
+import SecondScreen from './tabs/SecondScreen';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const MainScreenNavigator = TabNavigator({
+  Tab1: { screen: FirstScreen },
+  Tab2: { screen: SecondScreen }
 });
+
+MainScreenNavigator.navigationOptions = {
+  title: 'Tab example'
+};
+
+export default MainScreenNavigator;
