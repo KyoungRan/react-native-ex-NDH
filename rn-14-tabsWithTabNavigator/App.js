@@ -5,10 +5,26 @@ import { TabNavigator } from 'react-navigation';
 import FirstScreen from './tabs/FirstScreen';
 import SecondScreen from './tabs/SecondScreen';
 
-const MainScreenNavigator = TabNavigator({
-  Tab1: { screen: FirstScreen },
-  Tab2: { screen: SecondScreen }
-});
+const MainScreenNavigator = TabNavigator(
+  {
+    Tab1: { screen: FirstScreen },
+    Tab2: { screen: SecondScreen }
+  },
+  {
+    tabBarPosition: 'bottom',
+    swipeEnabled: true,
+    tablBarOptions: {
+      activeTintColor: 'white',
+      activeBackgroundColor: 'darkgreen',
+      inactiveTintColor: 'black',
+      inactiveBackgroundColor: 'green',
+      labelStyle: {
+        fontSize: 16,
+        padding: 10
+      }
+    }
+  }
+);
 
 MainScreenNavigator.navigationOptions = {
   title: 'Tab example'
