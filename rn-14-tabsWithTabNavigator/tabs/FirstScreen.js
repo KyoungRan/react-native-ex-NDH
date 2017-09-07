@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import { Text, View, Button, Tmage } from 'react-native';
+import { Text, View, Button, Image } from 'react-native';
 
 export default class FirstScreen extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Tab1'
+    tabBarLabel: 'Home',
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../images/icon-home.png')}
+        style={{ width: 22, height: 22, tintColor: 'white' }}
+      />
+    )
   };
 
   render() {

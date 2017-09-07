@@ -3,7 +3,13 @@ import { Text, View, Button, Image } from 'react-native';
 
 export default class SecondScreen extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Tab2'
+    tabBarLabel: 'Shopping',
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../images/icon-shopping.png')}
+        style={{ width: 22, height: 22, tintColor: 'white' }}
+      />
+    )
   };
 
   render() {

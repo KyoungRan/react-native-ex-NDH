@@ -13,14 +13,14 @@ const MainScreenNavigator = TabNavigator(
   {
     tabBarPosition: 'bottom',
     swipeEnabled: true,
-    tablBarOptions: {
+    tabBarOptions: {
       activeTintColor: 'white',
       activeBackgroundColor: 'darkgreen',
       inactiveTintColor: 'black',
       inactiveBackgroundColor: 'green',
       labelStyle: {
         fontSize: 16,
-        padding: 10
+        padding: 0
       }
     }
   }
